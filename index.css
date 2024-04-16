@@ -1,18 +1,26 @@
 .container {
-    width: 100%; /* Use percentage or vw for flexible width */
-    max-width: 1200px; /* Optional, for large screens */
-    margin: auto; /* Center the container */
+    width: 100%; /* Full width to use available space */
+    max-width: 1200px; /* Maximum width to constrain the container size */
+    margin: auto; /* Center the container horizontally */
     padding: 20px; /* Padding around the content */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     color: #333333;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
 nav {
-    background-color: #007bff;
+    background-color: rgba(0, 0, 0, 1);
     color: #ffffff;
     padding: 10px;
 }
@@ -21,6 +29,10 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+nav ul li:hover {
+  background-color: #007bffaf;
 }
 
 nav ul li {
@@ -37,6 +49,63 @@ nav ul li a {
     text-decoration: none;
     color: #ffffff;
 }
+#title-section {
+    height: 25vh;
+    width: 100%;
+    background-image: url("images/bannerCrop.png");
+    margin-bottom: 0vh; /* Adjust or remove if not needed */
+    padding: auto; /* Adjust based on your design */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color:#ffffff;
+    border-color: gray;
+    border-width: 0px;
+    border-style: solid;
+}
+#logo {
+    height: auto; /* Adjust height automatically based on the width */
+    width: 76%; /* Maintain the width percentage as specified */
+    object-fit: contain; /* Ensure the logo scales properly within the dimensions */
+    max-height: 100%; /* Prevent the logo from exceeding the container's height */
+}
+#textCont {
+    width: 70%;
+    height: 95%;
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+#space{
+    height: 95%;
+    width: 15%;
+}
+#imageCont {
+    width: 15%;
+    height: 95%;
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+#title {
+    font-size: 8rem; /* Adjust this value as needed */
+    margin: 0;
+    padding: 0; /* Remove or adjust padding */
+    color: black;
+    margin-top: -0%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Use a heavier weight for titles */
+    background-color: #ffffffd0;
+    border-color: #333333;
+    border-radius: 2px;
+    border-width: 2px;
+    border-style: solid;
+}
+
 p {
     line-height: 1.5;
     text-align: center;
@@ -44,6 +113,7 @@ p {
 
 h1{
     text-align: center;
+    font-size: 3rem;
 }
 #message{
     border-width: 5px;
@@ -51,32 +121,50 @@ h1{
     border-radius: 5px;
     border-top-style: solid;
     background-color: #007bff1a;
+    padding: 3vh;
+    flex-direction:row;
+    font-size: 2vw;
+    color: black;
+}
+#messageTitle {
+    padding: 3vh;
+    flex-direction:row;
+    font-size: 2rem;
+    color: black;
+}
+#pContent {
+    padding: 3vh;
+    flex-direction:row;
+    font-size: 2vw;
+    color: black;
 }
 #lr{
     width:100%;
     height: 50vh;
     padding: 0%;
-    
+    margin-bottom: 5%;
 }
 #left{
-    width: 44%;
+    width: 49%;
     margin-top: 5vh;
     border-width: 5px;
     border-color: #007bff;
     border-radius: 5px;
     border-top-style: solid;
     float: left;
+    margin-left: 0%;
     display: inline-block;
     background-color: #007bff1a;
     color: black;
 }
 #right{
-    width: 44%;
+    width: 49%;
     margin-top: 5vh;
     border-width: 5px;
     border-color: #007bff;
     background-color: #007bff1a;
     border-radius: 5px;
+    margin-right: 0%;
     border-top-style: solid;
     display: inline-block;
     float: right;
@@ -85,9 +173,13 @@ h1{
 }
 #content{
     padding: 3vh;
-    flex-direction:row;
-    font-size: 2.5vw;
+    font-size: 2vw; /* Adjust if necessary to maintain responsive font size */
     color: black;
+    display: flex; /* Using flexbox to manage children */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers children horizontally */
+    width: 100%;
+    clear: both; /* Clears any previous floats that might affect layout */
 }
 footer {
     margin-top: 20px;
@@ -96,36 +188,199 @@ footer {
     padding: 10px;
     text-align: center;
 }
-#title-section {
-    background-image: url('stock\ image.jpg');
-    height: 25vh;
-    margin-bottom: 0vh; /* Adjust or remove if not needed */
-    padding: auto; /* Adjust based on your design */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-
-    
-}
-#title {
-    font-size: 10vw; /* Adjust this value as needed */
-    margin: 0;
-    padding: 0; /* Remove or adjust padding */
-    color: white;
-}
 .content {
     padding-left: 1vh; /* Removes default margin */
     padding-right: 1vh;
 }
  
+.column {
+    float: left;
+    width: 25%;
+    padding: 0px;
+  }
+  
+* {box-sizing:border-box}
+
+/* General Styles */
+.slideshow-container, .mySlides img {
+    width: 90%;
+    max-width: 1000px; /* Use full width to ensure responsiveness */
+    margin: 20px auto; /* Automatically margin for horizontal centering */
+    position: relative; /* Keeps it positioned relative to its container */
+    overflow: hidden; /* Hides anything outside the bounds of the container */
+}
+
+.mySlides {
+    display: none; /* Hide all slides initially */
+    position: relative; /* Relative to the slideshow container */
+    width: 100%; /* Slide width fully responsive to the container width */
+}
+
+.mySlides img {
+    width: 100%; /* Image fills the slide */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensures no extra space below the image */
+}
+
+.slideshow-container, .mySlides {
+    margin: 0;
+    padding: 0;
+}
+
+/* Additionally, check elements immediately below the slideshow */
+#content {
+    margin-top: 0; /* Remove any top margin that could create a gap */
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 30%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* More opaque for better readability */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    text-align: left; /* Align text to the left */
+    font-size: calc(12px + 0.5vw); /* Responsive font size */
+    overflow: hidden;
+}
+.slideTitle {
+    font-size: calc(18px + 1vw); /* Combines a base size with a viewport-relative size */
+    color: #ffffff; /* Adjust the color if needed */
+    text-align: center; /* Ensures the title is centered */
+}
+  /* Next & previous buttons */
+  .prev, .next {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; /* Half the height of the button for center alignment */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.6s ease;
+    user-select: none;
+    z-index: 10; /* Above all */
+}
+.prev {
+    left: 10px; /* Slight margin from the left edge */
+}
+.next {
+    right: 10px; /* Slight margin from the right edge */
+}
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: #007bffaf;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+/* Initial state: hidden and slightly moved up */
+/* Initial state: hidden and slightly moved up */
+
+#reviewCont{
+    width:100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#review {
+    border-style: solid;
+    border-color: #007bff;
+    border-width: 5px;
+    border-radius: 15px;
+    background-color: #007bff1a;
+    height: 80%;
+    text-align: center;
+    color: black;
+    padding: auto;
+    width: 70%;
+}
+
+.element-to-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* State after scrolling into view */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+@media (max-width: 1024px) {
+    #title {
+        font-size: 5rem; /* Smaller font size for the title on smaller desktops and tablets */
+    }
+    #content, #left, #right {
+        font-size: 1.5rem; /* Larger font size for better readability */
+    }
+    #logo {
+        width: 90%; /* Make the logo larger to be more visible */
+    }
+    nav ul li {
+        font-size: 1.2rem; /* Increase the font size for navigation links */
+    }
+    .text {
+        font-size: calc(10px + .5vw); 
+    }
+    .slideTitle {
+        font-size: calc(16px + 1.5vw); /* Slightly larger on smaller desktops */
+    }
+}
+
 @media (max-width: 768px) {
+    /* Full width text box for smaller screens */
+    .text {
+        width: 100%;
+        top: auto;
+        bottom: 0;
+        transform: translateY(0);
+        text-align: center;
+        font-size: calc(10px + 1.5vw); 
+    }
+    .slideTitle {
+        font-size: calc(14px + 2vw); /* Even larger on tablets */
+    }
+    /* Adjust buttons for smaller screens */
+    .prev, .next {
+        width: 44px; /* Larger touch targets */
+        height: 44px;
+        font-size: 24px; /* Larger icons */
+        padding: 10px;
+    }
+    .slideshow-container, .mySlides img {
+        width: 100%;
+        max-width: 1000px; /* Use full width to ensure responsiveness */
+        margin: 20px auto; /* Automatically margin for horizontal centering */
+        position: relative; /* Keeps it positioned relative to its container */
+        overflow: hidden; /* Hides anything outside the bounds of the container */
+    }
     nav ul {
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Full-width navigation */
     }
     nav ul li {
         margin: 10px 0; /* Adjust for vertical stacking */
@@ -135,4 +390,38 @@ footer {
         padding-left: 0.325em;
         padding-right: 0.325em;
     }
+    #logo {
+        width: 90%; /* Even larger for mobile devices to maintain visibility */
+    }
+    #textCont {
+        width: 50%;
+        height: 95%;
+    }
+    #imageCont {
+        width: 25%;
+        height: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    #title {
+        font-size: 3rem; /* Smaller title for very small devices */
+    }
+    nav ul li {
+        font-size: 1rem; /* Smaller font size for navigation items */
+    }
+    .content, #left p, #right p {
+        font-size: 4vw; /* Small font size that scales with the viewport */
+    }
+    #logo {
+        width: 95%;
+    }
+    .slideTitle {
+        font-size: calc(10px + 2.5vw); /* Largest on mobile devices for better readability */
+    }
+    .text {
+        font-size: calc(6px + 2vw);  /* Larger font size for very small screens */
+        padding: 10px;
+    }
+
 }
