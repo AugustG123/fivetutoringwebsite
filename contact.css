@@ -86,7 +86,7 @@ nav ul li a {
     color: #ffffff;
 }
 #title-section {
-    height: 25vh;
+    height: 10vh + 5vw;
     width: 100%;
     background-image: url("images/bannerCrop.png");
     margin-bottom: 0vh; /* Adjust or remove if not needed */
@@ -124,7 +124,7 @@ nav ul li a {
     justify-content: center; /* Centers content horizontally */
 }
 #title {
-    font-size: 8rem; /* Adjust this value as needed */
+    font-size: 6.5rem; /* Adjust this value as needed */
     margin: 0;
     padding: 0; /* Remove or adjust padding */
     color: black;
